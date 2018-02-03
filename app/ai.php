@@ -18,7 +18,21 @@ class AI
      */
     public static function getGender($text)
     {
-        return 'Male';
+        $m = ["ผม","คราบ","ครับ","ตุ้ด"];
+        $y = ["ค่ะ","หนู","ว้าย","ทอม"];
+
+        for($i = 0 ; $i <sizeof($m); $i++){
+            if (stripos($text,$m[$i]) !== false){
+                return 'Male';
+            }
+        }
+
+        for($i = 0 ; $i <sizeof($y); $i++){
+            if (stripos($text,$y[$i]) !== false){
+                return 'Female';
+            }
+        }
+        return 'Unknown';
     }
 
     /**
@@ -26,7 +40,26 @@ class AI
      */
     public static function getSentiment($text)
     {
-        return 'Neutral';
+        $happy = ["จุ้บ","ม้วฟ"];
+        $normal = ["คุณ","ท่าน"];
+        $nothappy = ["สัส","ค.ย"];
+
+        for($i = 0 ; $i <sizeof($happy); $i++){
+            if (stripos($text,$happy[$i]) !== false){
+                return 'Positive';
+            }
+        }
+
+        for($i = 0 ; $i <sizeof($normal); $i++){
+            if (stripos($text,$normal[$i]) !== false){
+                return 'Neutral';
+            }
+        }
+        for($i = 0 ; $i <sizeof($nothappy); $i++){
+            if (stripos($text,$nothappy[$i]) !== false){
+                return 'Negative';
+            }
+        }
     }
 
     /**
@@ -34,7 +67,14 @@ class AI
      */
     public static function getRudeWords($text)
     {
-        return ['แสส'];
+        $not = ["สัส","เลว","หมา","มึง","อีจืด","อีอ้วน","อีดอก","อีนมเล็ก"];
+        $arry = [];
+        for($i = 0 ; $i <sizeof($not); $i++){
+            if (stripos($text,$not[$i]) !== false){
+                array_push($arry,$not[$i]);
+            }
+        }
+        return $arry;
     }
 
     /**
@@ -42,6 +82,13 @@ class AI
      */
     public static function getLanguages($text)
     {
-        return ['TH', 'EN'];
+        $language = [];
+        if(preg_replace('/[^ก-๙]/ u','',$text)!=""){
+            array_push($language,"TH");
+        } 
+        if(preg_replace('/[^a-z]/ u','',$text)!=""){
+            array_push($language,"EN");
+        }
+        return $language;
     }
 }
