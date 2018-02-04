@@ -111,21 +111,21 @@
                     document.getElementById('gender').innerHTML = '<i class="fab fa-accessible-icon"></i>'
                     break
                 case 'Female':
-                    document.getElementById('gender').innerHTML = '<i class="fas fa-female"></i>'
+                    document.getElementById('gender').innerHTML = '<i class="fas fa-blind"></i>'
                     break
                 case 'Unknown':
-                    document.getElementById('gender').innerHTML = '<i class="fas fa-question"></i>'
+                    document.getElementById('gender').innerHTML = '<i class="fas fa-balance-scale"></i>'
                     break
             }
             switch (result.sentiment) {
                 case 'Positive':
-                    document.getElementById('sentiment').innerHTML = '<i class="far fa-smile"></i>'
+                    document.getElementById('sentiment').innerHTML = '<i class="fab fa-android"></i>'
                     break
                 case 'Neutral':
-                    document.getElementById('sentiment').innerHTML = '<i class="far fa-meh"></i>'
+                    document.getElementById('sentiment').innerHTML = '<i class="fab fa-blackberry"></i>'
                     break
                 case 'Negative':
-                    document.getElementById('sentiment').innerHTML = '<i class="far fa-poo"></i>'
+                    document.getElementById('sentiment').innerHTML = '<i class="fab fa-apple"></i>'
                     break
             }
             document.getElementById('rude-words').innerHTML = result.rude_words.join(', ')
