@@ -92,49 +92,49 @@ final class AITest extends TestCase
     {
         $result = AI::getGender('สัสเเม่ง');
         $expected_result = ['สัส'];
-        $this->assertEquals($expected_result, $result);
+        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords2(): void
     {
         $result = AI::getGender('เลวม้วก');
         $expected_result = ['เลว'];
-        $this->assertEquals($expected_result, $result);
+        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords3(): void
     {
         $result = AI::getGender('ไอหมา');
         $expected_result = ['หมา'];
-        $this->assertEquals($expected_result, $result);
+        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords4(): void
     {
         $result = AI::getGender('มึงกูเพื่อนกันตลอดไป');
         $expected_result =['มึง'];
-        $this->assertEquals($expected_result, $result);
+        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords5(): void
     {
         $result = AI::getGender('อีจืดเอ๋ย');
         $expected_result = ['อีจืด'];
-        $this->assertEquals($expected_result, $result);
+        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords6(): void
     {
-        $result = AI::getGender('อีอ้วยเอ๋ย');
+        $result = AI::getGender('อีอ้วนเอ๋ย');
         $expected_result = ['อีอ้วน'];
-        $this->assertEquals($expected_result, $result);
+        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords7(): void
     {
         $result = AI::getGender('อีดอกทอง');
         $expected_result = ['อีดอก'];
-        $this->assertEquals($expected_result, $result);
+        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords8(): void
     {
         $result = AI::getGender('อีอ้วนเอ๋ย');
         $expected_result = ['อีอ้วน'];
-        $this->assertEquals($expected_result, $result);
+        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
     }
 
     public function testgetLanguages_thai(): void
