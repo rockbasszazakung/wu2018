@@ -92,67 +92,68 @@ final class AITest extends TestCase
     {
         $result = AI::getRudeWords('สัสเเม่ง');
         $expected_result = ['สัส'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords2(): void
     {
         $result = AI::getRudeWords('เลวม้วก');
         $expected_result = ['เลว'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords3(): void
     {
         $result = AI::getRudeWords('ไอหมา');
         $expected_result = ['หมา'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords4(): void
     {
         $result = AI::getRudeWords('มึงกูเพื่อนกันตลอดไป');
         $expected_result =['มึง'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords5(): void
     {
         $result = AI::getRudeWords('อีจืดเอ๋ย');
         $expected_result = ['อีจืด'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords6(): void
     {
         $result = AI::getRudeWords('อีอ้วนเอ๋ย');
         $expected_result = ['อีอ้วน'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords7(): void
     {
         $result = AI::getRudeWords('อีดอกทอง');
         $expected_result = ['อีดอก'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
     }
     public function testgetRudeWords8(): void
     {
         $result = AI::getRudeWords('อีอ้วนเอ๋ย');
         $expected_result = ['อีอ้วน'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
     }
 
     public function testgetLanguages_thai(): void
     {
         $result = AI::getLanguages('ไทย');
         $expected_result = ['TH'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
     }
     public function testgetLanguages_eng(): void
     {
         $result = AI::getLanguages('eng');
         $expected_result = ['EN'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
     }
     public function testgetLanguages_thaieng(): void
     {
         $result = AI::getLanguages('ไทย eng');
         $expected_result = ['TH','EN'];
-        $this->assertTrue(count(arry_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($result,$expected_result)) === 0);
+        $this->assertTrue(count(array_diff_key($expected_result, $result)) === 0);
     }
 }
